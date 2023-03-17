@@ -4,7 +4,7 @@ import 'package:login_and_reg1/View/Screens/login_screen.dart';
 import 'package:login_and_reg1/View/Screens/register_screen.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatefulWidget {
@@ -21,9 +21,9 @@ class _MainAppState extends State<MainApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/login_screen',
       routes: {
-        '/login_screen': (context) => LoginScreen(),
-        '/register_screen': (context) => RegisterScreen(),
-        '/home_screen': (context) => HomeScreen(),
+        '/login_screen': (context) => const LoginScreen(),
+        '/register_screen': (context) => const RegisterScreen(),
+        '/home_screen': (context) => const HomeScreen(),
       },
     );
   }

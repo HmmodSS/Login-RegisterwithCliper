@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,14 +16,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Mohammed Wael Badawe",
           style: TextStyle(fontSize: 20, color: Colors.orange),
         ),
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           AnimatedContainer(
@@ -36,13 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.circular(50),
               color: Colors.black,
             ),
-            duration: Duration(seconds: 3),
-            curve: Curves.fastOutSlowIn,
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeOut,
             child: IconButton(
               onPressed: () {
                 addItems();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
@@ -54,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (BuildContext context, val) {
                 return Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Container(
                         color: Colors.orange,
                         child: ListTile(
@@ -69,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 deleteItem(val);
                               });
                             },
-                            icon: Icon(Icons.delete),
+                            icon: const Icon(Icons.delete),
                           ),
                         ),
                       ),

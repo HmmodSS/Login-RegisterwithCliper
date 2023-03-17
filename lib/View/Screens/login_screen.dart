@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: height / 3,
                 width: double.infinity,
                 color: Colors.blue,
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Login",
                     style: TextStyle(
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
                 controller: _emaileditingController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     hintText: "Enter your Email",
                     //label: Text("Enter your Email"),
@@ -71,14 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
                 controller: _passwordeditingController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: Icon(Icons.remove_red_eye),
                     hintText: "Enter your Password",
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Text("Login")),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.pushNamed(context, '/register_screen');
                   },
-                  child: Text("Sign Up")),
+                  child: const Text("Sign Up")),
             ),
           ],
         ),
@@ -139,19 +139,6 @@ class _LoginScreenState extends State<LoginScreen> {
       return true;
     } else {
       return false;
-      // return SnackBar(
-      //     content: Container(
-      //   height: 20,
-      //   width: 50,
-      //   color: Colors.black,
-      //   child: Text(
-      //     "Please fill the data and try again",
-      //     style: TextStyle(
-      //       color: Colors.white,
-      //       fontSize: 18,
-      //     ),
-      //   ),
-      // ));
     }
   }
 }

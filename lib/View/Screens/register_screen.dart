@@ -27,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     height: height / 3,
                     width: double.infinity,
                     color: Colors.blue,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Register",
                         style: TextStyle(
@@ -45,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.white,
                         size: 30,
@@ -53,13 +53,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.person),
                     hintText: "Enter your Name",
                     //label: Text("Enter your Email"),
@@ -67,26 +67,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.email),
                     hintText: "Enter your Email",
                     labelText: "Email",
                     border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: Icon(Icons.remove_red_eye),
                     hintText: "Enter your Password",
@@ -94,13 +94,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: Icon(Icons.remove_red_eye),
                     hintText: "Enter your Confident Password",
@@ -108,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     border: OutlineInputBorder()),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -123,9 +123,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),
-                  child: Text("Register")),
+                  child: const Text("Register")),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
