@@ -10,6 +10,14 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  String? name;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    name = '_children@20042623';
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -42,9 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Positioned(
                   top: 20,
                   child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+                      onPressed: () => Navigator.pop(context),
                       icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.white,
@@ -117,9 +123,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(50)),
               child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home_screen');
-                  },
+                  onPressed: () => Navigator.pushNamed(context, '/home_screen'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),
@@ -134,9 +138,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(50)),
               child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: () => Navigator.pop(context),
                   child: Text("Login")),
             ),
           ],

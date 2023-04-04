@@ -37,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: double.infinity,
         height: double.infinity,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ClipPath(
               clipper: MyCliper(),
@@ -95,9 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(50)),
               child: ElevatedButton(
-                  onPressed: () async {
-                    await performancLogin();
-                  },
+                  onPressed: () async => await performancLogin(),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),
@@ -112,9 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(50)),
               child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/register_screen');
-                  },
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/register_screen'),
                   child: const Text("Sign Up")),
             ),
           ],

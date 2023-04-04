@@ -37,9 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
             duration: const Duration(milliseconds: 400),
             curve: Curves.easeOut,
             child: IconButton(
-              onPressed: () {
-                addItems();
-              },
+              onPressed: () => addItems(),
               icon: const Icon(
                 Icons.add,
                 color: Colors.white,
@@ -62,11 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: ListTile(
                           title: Text("${names[val]} ${val + 1}"),
                           trailing: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                deleteItem(val);
-                              });
-                            },
+                            onPressed: () => setState(() {
+                              deleteItem(val);
+                            }),
                             icon: const Icon(Icons.delete),
                           ),
                         ),
