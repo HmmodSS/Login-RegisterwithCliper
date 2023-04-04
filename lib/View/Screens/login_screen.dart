@@ -28,95 +28,88 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ClipPath(
-              clipper: MyCliper(),
-              child: Container(
-                height: height / 3,
-                width: double.infinity,
-                color: Colors.blue,
-                child: const Center(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ClipPath(
+            clipper: MyCliper(),
+            child: Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.blue,
+              child: const Center(
+                child: Text(
+                  "Login",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              height: height / 6,
+          ),
+          SizedBox(
+            height: 100,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: TextFormField(
+              controller: _emaileditingController,
+              decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.email),
+                  hintText: "Enter your Email",
+                  //label: Text("Enter your Email"),
+                  labelText: "Email",
+                  border: OutlineInputBorder()),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextFormField(
-                controller: _emaileditingController,
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.email),
-                    hintText: "Enter your Email",
-                    //label: Text("Enter your Email"),
-                    labelText: "Email",
-                    border: OutlineInputBorder()),
-              ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: TextFormField(
+              controller: _passwordeditingController,
+              decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.lock),
+                  suffixIcon: Icon(Icons.remove_red_eye),
+                  hintText: "Enter your Password",
+                  labelText: "Password",
+                  border: OutlineInputBorder()),
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextFormField(
-                controller: _passwordeditingController,
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
-                    suffixIcon: Icon(Icons.remove_red_eye),
-                    hintText: "Enter your Password",
-                    labelText: "Password",
-                    border: OutlineInputBorder()),
-              ),
-            ),
-            SizedBox(
-              height: height / 11,
-            ),
-            Container(
-              height: 65,
-              width: width * 0.9,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(50)),
-              child: ElevatedButton(
-                  onPressed: () async => await performancLogin(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                  ),
-                  child: Text("Login")),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 60,
-              width: width * 0.9,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(50)),
-              child: OutlinedButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, '/register_screen'),
-                  child: const Text("Sign Up")),
-            ),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 65,
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+            child: ElevatedButton(
+                onPressed: () async => await performancLogin(),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
+                child: Text("Login")),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: 60,
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(50)),
+            child: OutlinedButton(
+                onPressed: () =>
+                    Navigator.pushNamed(context, '/register_screen'),
+                child: const Text("Sign Up")),
+          ),
+        ],
       ),
     );
   }
